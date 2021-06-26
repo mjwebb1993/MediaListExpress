@@ -22,9 +22,6 @@ export default st => html`
     <div class="flex-child blue">
       <h3>Revolving List of Different Parts of Catalog</h3>
         <p>a list of random catalog items will be displayed here</p>
-        <h3>
-
-  </h3>
     </div>
     </div>
   </div>

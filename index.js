@@ -48,10 +48,15 @@ router.hooks({
         // axios.get("https://medialistapi.herokuapp.com/listMedia").then(
         axios.get(`${process.env.MEDIA_API_URL}/listMedia`).then(response => {
           // console.log("response", response);
-          state.Media.lists = {};
+          state.Media.lists = [];
           state.Media.lists.games = response.data.Games;
           state.Media.lists.books = response.data.Books;
           state.Media.lists.movies = response.data.Movies;
+          let arrayTest = ["test"];
+          console.log(arrayTest);
+          let arrayFiller = "filler";
+          arrayTest.push(arrayFiller, "more test");
+          console.log(arrayTest);
           console.log("lists", state.Media.lists);
           done();
         });
