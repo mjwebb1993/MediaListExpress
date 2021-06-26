@@ -2,19 +2,27 @@ import html from "html-literal";
 
 export default st => html`
   This is the Media WIP page! This is a test!
-  <section id="game">
+  <table id="media">
+    <tr>
+      <th>Name</th>
+      <th>Genre</th>
+      <th>Year Released</th>
+      <th>Console</th>
+    </tr>
     ${st.games
       .map(game => {
-        return formatMediaEntry(game);
+        return `<tr><td>${game.name}</td><td>${game.genre.join(
+          " & "
+        )}</td><td>${game.yearReleased}</td><td>${game.console}</td></tr>`;
       })
       .join("")}
-  </section>
+  </table>
 `;
 
-function formatMediaEntry(game) {
-  return `
-    <div class="intro-paragraph">
-      <p>${game.name} was released in ${game.yearReleased} and has the following tags: ${game.genre}</p>
-    </div>
-  `;
-}
+// function formatMediaEntry(game) {
+//   return `
+//     <div class="intro-paragraph">
+//       <p>${game.name} was released in ${game.yearReleased} and has the following tags: ${game.genre}</p>
+//     </div>
+//   `;
+// }

@@ -45,14 +45,14 @@ router.hooks({
     // console.log("page", page);
     switch (page) {
       case "Media":
-        state.Media.lists = [];
         // axios.get("https://medialistapi.herokuapp.com/listMedia").then(
         axios.get(`${process.env.MEDIA_API_URL}/listMedia`).then(response => {
-          // console.log("response: ", response);
-          response.data.forEach(list => {
-            state.Media.lists.push(list);
-            // console.log(state.Media.lists);
-          });
+          // console.log("response", response);
+          state.Media.lists = {};
+          state.Media.lists.games = response.data.Games;
+          state.Media.lists.books = response.data.Books;
+          state.Media.lists.movies = response.data.Movies;
+          console.log("lists", state.Media.lists);
           done();
         });
         break;
@@ -61,6 +61,24 @@ router.hooks({
         axios.get(`${process.env.MEDIA_API_URL}/listGames`).then(response => {
           response.data.forEach(game => {
             state.Game.games.push(game);
+          });
+          done();
+        });
+        break;
+      case "Book":
+        state.Book.books = [];
+        axios.get(`${process.env.MEDIA_API_URL}/listBooks`).then(response => {
+          response.data.forEach(book => {
+            state.Book.books.push(book);
+          });
+          done();
+        });
+        break;
+      case "Movie":
+        state.Movie.movies = [];
+        axios.get(`${process.env.MEDIA_API_URL}/listMovies`).then(response => {
+          response.data.forEach(movie => {
+            state.Movie.movies.push(movie);
           });
           done();
         });

@@ -2,17 +2,72 @@ import html from "html-literal";
 
 export default st => html`
   This is the Media WIP page! This is a test!
-  <section id="media">
-    ${st.lists.map(list => {
-      return formatMediaEntry(list);
-    })}
-  </section>
+
+  <table id="media">
+    <tr>
+      <th>Name</th>
+      <th>Genre</th>
+      <th>Year Released</th>
+      <th>Console</th>
+    </tr>
+    ${st.lists.games
+      .map(list => {
+        return `<tr><td>${list.name}</td><td>${list.genre.join(
+          " & "
+        )}</td><td>${list.yearReleased}</td><td>${list.console}</td></tr>`;
+      })
+      .join("")}
+  </table>
+
+  <table id="media">
+    <tr>
+      <th>Name</th>
+      <th>Genre</th>
+      <th>Year Released</th>
+      <th>On Amazon</th>
+    </tr>
+    ${st.lists.books
+      .map(list => {
+        return `<tr><td>${list.name}</td><td>${list.genre.join(
+          " & "
+        )}</td><td>${list.yearReleased}</td><td>Yes</td></tr>`;
+      })
+      .join("")}
+  </table>
+
+  <table id="media">
+    <tr>
+      <th>Name</th>
+      <th>Genre</th>
+      <th>Year Released</th>
+      <th>Distributor</th>
+    </tr>
+    ${st.lists.movies
+      .map(list => {
+        return `<tr><td>${list.name}</td><td>${list.genre.join(
+          " & "
+        )}</td><td>${list.yearReleased}</td><td>${list.distributor}</td></tr>`;
+      })
+      .join("")}
+  </table>
 `;
 
-function formatMediaEntry(list) {
-  return `
-    <div class="intro-paragraph">
-      <h4>List of Games: ${list[0].name}</h4>
-    </div>
-  `;
-}
+// function formatGameEntry(list) {
+//   return html`
+//     <table id="media">
+//       <tr>
+//         <th>Name</th>
+//         <th>Genre</th>
+//         <th>Year Released</th>
+//         <th>Console</th>
+//       </tr>
+//       ${list.games
+//         .map(list => {
+//           return `<tr><td>${list.name}</td><td>${list.genre.join(
+//             " & "
+//           )}</td><td>${list.yearReleased}</td><td>${list.console}</td></tr>`;
+//         })
+//         .join("")}
+//     </table>
+//   `;
+// }
