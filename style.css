@@ -1,4 +1,5 @@
 html {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   background-color: lightgray;
 }
 .flex-child,
@@ -9,12 +10,13 @@ html {
 header {
   background: aqua;
   background-size: cover;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   /* max-height: 100px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid aqua;
 }
 header > a {
   text-decoration: none;
@@ -38,22 +40,13 @@ header > #headerTitle {
 header {
   height: 100vh;
 }
-#tests tbody {
-  width: 100%;
-}
-
-#tests th {
-  text-align: left;
-}
-
-#tests td,th {
-  width: 25%;
-}
 
   nav {
     display: flex;
     align-items: stretch;
     flex-direction: column;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background-color: aliceblue;
   }
 
   nav > i {
@@ -133,17 +126,13 @@ h5 {
     display: none;
   }
 }
-#tests {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.2em;
-  height: auto;
-  width: 92.5%;
-  margin: auto;
-  color: blue;
-}
+
 #media {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.2em;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 3px solid blue;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size:x-large;
   height: auto;
   width: 92.5%;
   margin: auto;
@@ -152,6 +141,25 @@ h5 {
 #media tbody {
   width: 100%;
 }
+#media > thead {
+  border: 1px black solid;
+}
+
+thead th:nth-child(1) {
+  width: 23%;
+}
+
+thead th:nth-child(2) {
+  width: 25%;
+}
+
+thead th:nth-child(3) {
+  width: 25%;
+}
+
+thead th:nth-child(4) {
+  width: 15%;
+}
 
 #media th {
   text-align: left;
@@ -159,6 +167,7 @@ h5 {
 
 #media td,th {
   width: 25%;
+  padding: 10px;
 }
 
 /* .flex-media {

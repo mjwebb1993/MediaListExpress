@@ -1,14 +1,16 @@
 import html from "html-literal";
 
 export default st => html`
-  This is the Media WIP page! This is a test!
+  <h2>List of All Movies:</h2>
   <table id="media">
-    <tr>
-      <th>Name</th>
-      <th>Genre</th>
-      <th>Year Released</th>
-      <th>Distributor</th>
-    </tr>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Genre</th>
+        <th>Year Released</th>
+        <th>Distributor</th>
+      </tr>
+    </thead>
     ${st.movies
       .map(movie => {
         return `<tr><td>${movie.name}</td><td>${movie.genre.join(
