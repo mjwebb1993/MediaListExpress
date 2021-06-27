@@ -42,6 +42,20 @@ header > #headerTitle {
 header {
   height: 100vh;
 }
+label {
+  display: block;
+  font: .9rem 'Fira Sans', sans-serif;
+}
+
+input[type='submit'],
+label {
+  margin-top: 1rem;
+}
+.register-home {
+  text-align: center;
+  text-decoration: underline;
+  padding-bottom: 10px;
+}
 
   nav {
     display: flex;
