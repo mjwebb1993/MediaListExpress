@@ -4,21 +4,21 @@ export default st => html`
   <section id="game-page">
     ${st.games
       .map(game => {
-        return formatBlogPost(game);
+        return formatGame(game);
       })
       .join("")}
   </section>
 `;
 
-function formatBlogPost(game) {
+function formatGame(game) {
   return `
     <div class="game-flex">
     <h3>Game Name: ${game.name}</h3>
+    <img src=${game.picUrl}>
     <h4>Game Info</h4>
     <h5>Genre: ${game.genre.join(" & ")}<br>
     Released: ${game.yearReleased}<br>
     Consoles: ${game.console}</h5>
-    <img src=${game.picUrl}>
     </div>
   `;
 }
