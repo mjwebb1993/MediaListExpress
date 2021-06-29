@@ -2,6 +2,7 @@ import html from "html-literal";
 
 export default st => html`
 <section id="home">
+  // change the colors, make sure to blow up the zoom for visibility
   <div class="intro-paragraph">
     <h3>Media List Express Introduction</h3>
       <p>Welcome to Media List Express! This application will allow you to organize the content that you want to watch while never having to guess if you've already seen it!</p>
@@ -16,20 +17,12 @@ export default st => html`
   </div>
   <div class="flex-container">
     <div class="flex-child red">
-      <h3>User Login</h3>
-        <div>
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" placeholder="Enter Username...">
-        </div>
+    <div class="login-home">
+    Already a user? Click <a href="/Login">here</a> to Log in!
+    </div>
 
-        <div>
-          <label for="pass">Password (8 characters minimum):</label>
-          <input type="password" id="pass" name="password" placeholder="Enter Password..."
-                minlength="8" required>
-        </div>
-        <input type="submit" value="Sign in">
-        <div class="register-home">
-        Not a user? Register here!
+    <div class="register-home">
+        Not a user? Register <a href="/Register">here!</a>
         </div>
     </div>
 

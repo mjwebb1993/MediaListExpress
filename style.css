@@ -1,3 +1,6 @@
+*{
+  /* box-sizing: content-box; */
+}
 html {
   font-family: 'M PLUS Rounded 1c', sans-serif;
   background-color: lightgray;
@@ -47,13 +50,80 @@ label {
   font: .9rem 'Fira Sans', sans-serif;
 }
 
-input[type='submit'],
-label {
-  margin-top: 1rem;
+#selectButton {
+  color: blue;
+}
+
+#game-page {
+/* justify-content: center; */
+/* margin-left: auto; */
+/* margin-right: auto; */
+/* display: flex; */
+/* width: 500px; */
+
+ /* flex-wrap:initial; */
+ /* margin-right: 5rem;
+ padding-left: 100px;
+ margin-left: 15rem; */
+flex-direction:  row;
+}
+.game-container {
+  width: 800px;
+}
+/* img {
+  width: 100px;
+  display: flex;
+  justify-content: right;
+} */
+.game-flex {
+  border: 2px solid black;
+  padding-left: 2%;
+  /* margin-right: 20rem; */
+}
+.game-flex > h3 {
+  margin: 1rem;
+  text-align: center;
+}
+.game-flex > h4 {
+  margin: 1rem;
+  text-align: center;
+}
+.game-flex > h5 {
+  margin: 1rem;
+  text-align: center;
+}
+.game-flex > img {
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 100px;
+margin-bottom: 1px;
+
+}
+
+#submitButtonOne {
+  background: var(--darkerGreen);
+  text-align: center;
+  color: whitesmoke;
+  cursor: pointer;
+  font-size: 40px;
+  border: 10px;
+  transition: all 0.5s;
+  border-radius: 4px;
+  width: auto;
+  text-decoration: 0;
+  padding: 10px;
+  margin-top: .5em;
+  margin-bottom: 10px;
 }
 .register-home {
   text-align: center;
-  text-decoration: underline;
+  text-shadow:red 1px 0 10px;
+  padding-bottom: 10px;
+}
+.login-home {
+  text-align: center;
+  text-shadow:red 1px 0 10px;
   padding-bottom: 10px;
 }
 
@@ -108,11 +178,6 @@ label {
   }
 }
 
-h3,
-h4,
-h5 {
-  text-decoration: underline;
-}
 .flex-container {
   display: flex;
   /* flex-direction: row; */
@@ -125,6 +190,7 @@ h5 {
 }
 .intro-paragraph > h3 {
   text-align: center;
+  text-decoration: underline;
 }
 .flex-child {
   flex: 1;
@@ -132,9 +198,15 @@ h5 {
   border: 2px solid black;
   padding-left: 2%;
 }
-
+.flex-child {
+  visibility: visible;
+}
+.flex-child > h3 {
+  text-decoration: underline;
+}
 .flex-child:first-child {
   margin-right: 20px;
+  visibility:visible;
 }
 @media (min-width: 550px) {
   nav > .fa-bars {

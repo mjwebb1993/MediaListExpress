@@ -4,6 +4,7 @@ import * as state from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
 import axios from "axios";
+// import { response } from "express";
 
 const router = new Navigo(window.location.origin);
 
@@ -33,16 +34,34 @@ function addEventListeners() {
     .addEventListener("click", () =>
       document.querySelector("nav > ul").classList.toggle("hidden--mobile")
     );
+  const form = document.querySelector("form");
+  document.querySelector("#submitButtonOne").addEventListener("click", () => {
+    console.log("I was clicked!");
+    userInput();
+  });
 }
+
+let users = {
+  username: "password"
+};
+function userInput() {
+  let userName = document.getElementById("userNameInput").value;
+  let userPass = document.getElementById("userPassInput").value;
+  users.username = userName;
+  users.password = userPass;
+  // document.getElementsByClassName("flex-child").classList.toggle("visibility");
+  console.log(users);
+  // document.querySelector("flex-child").style.visibility = "hidden";
+}
+// add event listeners for login page
+
 router.hooks({
   before: (done, params) => {
     const page =
       params && params.hasOwnProperty("page")
         ? capitalize(params.page)
         : "Home";
-    // fetchDataByView(state[page]);
-    // done();
-    // console.log("page", page);
+
     switch (page) {
       case "Media":
         // axios.get("https://medialistapi.herokuapp.com/listMedia").then(
@@ -88,6 +107,21 @@ router.hooks({
           done();
         });
         break;
+      // case "Home":
+      //   // document
+      //   //   .querySelector("#submitButtonOne")
+      //   //   .addEventListener("click", () => {
+      //   //     console.log("I was clicked!");
+      //   //     userInput();
+      //   //   });
+
+      //   // router.get("/login", (request, response) => {
+      //   //   response.render("login");
+      //   // });
+      //   // router.get("/register", (request, response) => {
+      //   //   response.render("register");
+      //   // });
+      //   break;
       default:
         done();
     }
