@@ -1,6 +1,9 @@
 import html from "html-literal";
 
 export default st => html`
+  <div id="media-page">
+    <h2>List of All Games:</h2>
+  </div>
   <section id="game-page">
     ${st.games
       .map(game => {

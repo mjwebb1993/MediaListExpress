@@ -6,7 +6,9 @@ export default st => html`
       <h2>MEDIA LIST EXPRESS</h2>
       <h3>An app that allows you to keep track of your favorites and more!</h3>
     </div>
-    <h3>You are currently on the ${st.view} page</h3>
+    <div id="current-page">
+      <h3>You are currently on the ${st.view} page</h3>
+    </div>
   </header>
 `;
 

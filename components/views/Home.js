@@ -2,7 +2,6 @@ import html from "html-literal";
 
 export default st => html`
 <section id="home">
-  // change the colors, make sure to blow up the zoom for visibility
   <div class="intro-paragraph">
     <h3>Media List Express Introduction</h3>
       <p>Welcome to Media List Express! This application will allow you to organize the content that you want to watch while never having to guess if you've already seen it!</p>
@@ -27,9 +26,23 @@ export default st => html`
     </div>
 
     <div class="flex-child blue">
-      <h3>Revolving List of Different Parts of Catalog</h3>
-        <p>a list of random catalog items will be displayed here</p>
-    </div>
+      <h3>Example of Data</h3>
+      <h2>See some of your favorites like Mass Effect!</h2>
+      <section id="game-page">
+    ${st.examples
+      .map(example => {
+        return formatGame(example);
+      })
+      .join("")}
+  </section>
+  </div>
     </div>
   </div>
-</section>`;
+</section>
+`;
+
+function formatGame(example) {
+  return `
+    <img src=${example.picUrl} width="100" height="100">
+  `;
+}

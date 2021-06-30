@@ -3,15 +3,15 @@
 }
 html {
   font-family: 'M PLUS Rounded 1c', sans-serif;
-  background-color: lightgray;
+  background-color: paleturquoise;
 }
 .flex-child,
 .second-flex-container,
 .second-flex-container-red {
-  background-color: gray;
+  background-color: paleturquoise;
 }
 header {
-  background: aqua;
+  background: paleturquoise;
   background-size: cover;
   font-family: 'M PLUS Rounded 1c', sans-serif;
   /* max-height: 100px; */
@@ -19,18 +19,18 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid aqua;
+  border: 1px solid paleturquoise;
 }
 header > a {
   text-decoration: none;
-  background-color: white;
+  background-color: paleturquoise;
   font-size: 1.5em;
   padding: 1.5rem;
   border-radius: 10px;
 }
 header > #headerTitle {
   border: 2px solid black;
-  background-color: gray;
+  background-color: silver;
   text-align: center;
   margin-bottom: 10px;
   padding: 5px 5px;
@@ -55,17 +55,9 @@ label {
 }
 
 #game-page {
-/* justify-content: center; */
-/* margin-left: auto; */
-/* margin-right: auto; */
-/* display: flex; */
-/* width: 500px; */
-
- /* flex-wrap:initial; */
- /* margin-right: 5rem;
- padding-left: 100px;
- margin-left: 15rem; */
+background-color: silver;
 flex-direction:  row;
+align-items: center;
 }
 .game-container {
   width: 800px;
@@ -104,10 +96,11 @@ margin-bottom: 1px;
 #submitButtonOne {
   background: var(--darkerGreen);
   text-align: center;
-  color: whitesmoke;
+  color: black;
+  text-shadow: black 1px 0 10px;
   cursor: pointer;
   font-size: 40px;
-  border: 10px;
+  border: black 1px solid;
   transition: all 0.5s;
   border-radius: 4px;
   width: auto;
@@ -118,12 +111,12 @@ margin-bottom: 1px;
 }
 .register-home {
   text-align: center;
-  text-shadow:red 1px 0 10px;
+  text-shadow:black 1px 0 10px;
   padding-bottom: 10px;
 }
 .login-home {
   text-align: center;
-  text-shadow:red 1px 0 10px;
+  text-shadow: black 1px 0 10px;
   padding-bottom: 10px;
 }
 
@@ -132,7 +125,7 @@ margin-bottom: 1px;
     align-items: stretch;
     flex-direction: column;
     font-family: 'M PLUS Rounded 1c', sans-serif;
-    background-color: aliceblue;
+    background-color: paleturquoise;
   }
 
   nav > i {
@@ -150,7 +143,7 @@ margin-bottom: 1px;
   nav > ul > li {
     padding: .5rem;
     list-style-type: none;
-    background-color: gray;
+    background-color: silver;
   }
 
 
@@ -180,13 +173,14 @@ margin-bottom: 1px;
 
 .flex-container {
   display: flex;
+
   /* flex-direction: row; */
 }
 .intro-paragraph{
   border: 2px solid black;
   margin-bottom: 10px;
   padding-left: 2%;
-  background-color: gray;
+  background-color: silver;
 }
 .intro-paragraph > h3 {
   text-align: center;
@@ -197,6 +191,7 @@ margin-bottom: 1px;
   flex-direction: column;
   border: 2px solid black;
   padding-left: 2%;
+  background-color: silver;
 }
 .flex-child {
   visibility: visible;

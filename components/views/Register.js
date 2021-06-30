@@ -16,7 +16,7 @@ export default st => html`
           <input id="userPassInput" type="password" id="pass" name="password" placeholder="Enter Password..."
                 minlength="8" required>
         </div>
-        <input id="submitButtonOne" type="submit" value="Sign in">
+        <input id="submitButtonOne" type="submit" value="Register">
         </form>
 
         <div class="register-home">

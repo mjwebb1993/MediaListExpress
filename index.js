@@ -107,21 +107,35 @@ router.hooks({
           done();
         });
         break;
-      // case "Home":
-      //   // document
-      //   //   .querySelector("#submitButtonOne")
-      //   //   .addEventListener("click", () => {
-      //   //     console.log("I was clicked!");
-      //   //     userInput();
-      //   //   });
-
-      //   // router.get("/login", (request, response) => {
-      //   //   response.render("login");
-      //   // });
-      //   // router.get("/register", (request, response) => {
-      //   //   response.render("register");
-      //   // });
-      //   break;
+      case "User":
+        // axios.get("https://medialistapi.herokuapp.com/listMedia").then(
+        axios.get(`${process.env.MEDIA_API_URL}/listMedia`).then(response => {
+          state.User.users = [];
+          state.User.users.games = response.data.Games;
+          state.User.users.books = response.data.Books;
+          state.User.users.movies = response.data.Movies;
+          let arrayTest = ["test"];
+          console.log(arrayTest);
+          let arrayFiller = "filler";
+          arrayTest.push(arrayFiller, "more test");
+          console.log(arrayTest);
+          console.log("lists", state.User.users);
+          done();
+        });
+        break;
+      case "Home":
+        state.Home.examples = [];
+        axios.get(`${process.env.MEDIA_API_URL}/listGames`).then(response => {
+          // console.log("response", response);
+          response.data.forEach(example => {
+            if (example.name == "Mass Effect") {
+              state.Home.examples.push(example);
+            }
+          });
+          console.log(state.Home.examples);
+          done();
+        });
+        break;
       default:
         done();
     }
