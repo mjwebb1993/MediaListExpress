@@ -19,7 +19,7 @@ function render(st = state.Home) {
   router.updatePageLinks();
   addEventListeners(st);
 }
-function addEventListeners() {
+function addEventListeners(st) {
   // add event listeners to Nav items for navigation
   document.querySelectorAll("nav a").forEach(navLink =>
     navLink.addEventListener("click", event => {
@@ -35,12 +35,24 @@ function addEventListeners() {
       document.querySelector("nav > ul").classList.toggle("hidden--mobile")
     );
   const form = document.querySelector("form");
-  document.querySelector("#submitButtonOne").addEventListener("click", () => {
-    console.log("I was clicked!");
-    userInput();
-  });
+  // document.querySelector("#submitButtonOne").addEventListener("click", () => {
+  //   console.log("I was clicked!");
+  //   userInput();
+  // });
+  console.log("I'm rendering movie before if", st);
+  if (st.view === "Movie") {
+    console.log("I'm rendering movie");
+    document.querySelectorAll("#selectButton").forEach(button => {
+      button.addEventListener("click", event => {
+        console.log("events target", event.target.attributes);
+        //create a new object with all key attributes and push into future list
+        state.User.futureList.push(event.target.attributes["data-name"].value);
+        // state.User.futureList.push(event.target.attributes.data.value);
+        console.log(state.User.futureList);
+      });
+    });
+  }
 }
-
 let users = {
   username: "password"
 };

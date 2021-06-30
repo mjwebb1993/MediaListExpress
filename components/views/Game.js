@@ -22,7 +22,9 @@ function formatGame(game) {
     <h5>Genre: ${game.genre.join(" & ")}<br>
     Released: ${game.yearReleased}<br>
     Consoles: ${game.console}</h5>
+    <input id="selectButton" type="button" value="select">
     </div>
+
   `;
 }
 

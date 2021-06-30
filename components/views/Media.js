@@ -32,6 +32,7 @@ function formatGame(game) {
     <h5>Genre: ${game.genre.join(" & ")}<br>
     Released: ${game.yearReleased}<br>
     Consoles: ${game.console}</h5>
+    <input id="selectButton" type="button" value="select">
     </div>
   `;
 }
@@ -44,6 +45,7 @@ function formatMovie(movie) {
 <h5>Genre: ${movie.genre.join(" & ")}<br>
 Released: ${movie.yearReleased}<br>
 Studio: ${movie.distributor}</h5>
+<input id="selectButton" type="button" value="select">
 </div>
 `;
 }
@@ -56,6 +58,7 @@ function formatBook(book) {
     <h5>Genre: ${book.genre.join(" & ")}<br>
     Released: ${book.yearReleased}<br>
     Consoles: ${book.author}</h5>
+    <input id="selectButton" type="button" value="select">
     </div>
   `;
 }

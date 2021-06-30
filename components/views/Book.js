@@ -22,6 +22,7 @@ function formatBook(book) {
     <h5>Genre: ${book.genre.join(" & ")}<br>
     Released: ${book.yearReleased}<br>
     Consoles: ${book.author}</h5>
+    <input id="selectButton" type="button" value="select">
     </div>
   `;
 }

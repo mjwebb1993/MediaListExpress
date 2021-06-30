@@ -22,6 +22,9 @@ function formatMovie(movie) {
     Released: ${movie.yearReleased}<br>
     Studio: ${movie.distributor}</h5>
     <img src=${movie.picUrl}>
+    <input id="selectButton" type="button" value="select" data-name="${
+      movie.name
+    }">
     </div>
   `;
 }
