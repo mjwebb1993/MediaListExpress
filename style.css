@@ -62,6 +62,24 @@ label {
 #current-page {
   text-shadow: #0a9396 1px 0 10px;
 }
+#current-page-home {
+  text-shadow: #0a9396 1px 0 10px;
+}
+#current-page-user {
+  text-shadow: #04aa1a 1px 0 10px;
+}
+#current-page-movie {
+  text-shadow: #9b2226 1px 0 10px;
+}
+#current-page-game {
+  text-shadow: #bb3e03 1px 0 10px;
+}
+#current-page-book {
+  text-shadow: #005f73 1px 0 10px;
+}
+#current-page-media {
+  text-shadow: #7e0a92 1px 0 10px;
+}
 
 #selectButtonFuture {
   height:23px;
