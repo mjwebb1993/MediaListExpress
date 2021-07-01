@@ -39,14 +39,22 @@ function addEventListeners(st) {
   //   console.log("I was clicked!");
   //   userInput();
   // });
-  console.log("I'm rendering movie before if", st);
+  // console.log("I'm rendering movie before if", st);
   if (st.view === "Movie") {
-    console.log("I'm rendering movie");
+    // console.log("I'm rendering movie");
     document.querySelectorAll("#selectButton").forEach(button => {
       button.addEventListener("click", event => {
         console.log("events target", event.target.attributes);
-        //create a new object with all key attributes and push into future list
-        state.User.futureList.push(event.target.attributes["data-name"].value);
+        // create a new object with all key attributes and push into future list
+        state.User.futureList.name = event.target.attributes["data-name"].value;
+        state.User.futureList.genre =
+          event.target.attributes["data-genre"].value;
+        state.User.futureList.yearReleased =
+          event.target.attributes["data-year"].value;
+        state.User.futureList.picUrl =
+          event.target.attributes["data-img"].value;
+        state.User.futureList.distributor =
+          event.target.attributes["data-distributor"].value;
         // state.User.futureList.push(event.target.attributes.data.value);
         console.log(state.User.futureList);
       });
@@ -62,7 +70,7 @@ function userInput() {
   users.username = userName;
   users.password = userPass;
   // document.getElementsByClassName("flex-child").classList.toggle("visibility");
-  console.log(users);
+  // console.log(users);
   // document.querySelector("flex-child").style.visibility = "hidden";
 }
 // add event listeners for login page
@@ -83,12 +91,12 @@ router.hooks({
           state.Media.lists.games = response.data.Games;
           state.Media.lists.books = response.data.Books;
           state.Media.lists.movies = response.data.Movies;
-          let arrayTest = ["test"];
-          console.log(arrayTest);
-          let arrayFiller = "filler";
-          arrayTest.push(arrayFiller, "more test");
-          console.log(arrayTest);
-          console.log("lists", state.Media.lists);
+          // let arrayTest = ["test"];
+          // console.log(arrayTest);
+          // let arrayFiller = "filler";
+          // arrayTest.push(arrayFiller, "more test");
+          // console.log(arrayTest);
+          // console.log("lists", state.Media.lists);
           done();
         });
         break;

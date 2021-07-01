@@ -17,14 +17,16 @@ function formatMovie(movie) {
   return `
     <div class="game-flex">
     <h3>Movie Name: ${movie.name}</h3>
+    <img src=${movie.picUrl}>
     <h4>Movie Info</h4>
     <h5>Genre: ${movie.genre.join(" & ")}<br>
     Released: ${movie.yearReleased}<br>
     Studio: ${movie.distributor}</h5>
-    <img src=${movie.picUrl}>
     <input id="selectButton" type="button" value="select" data-name="${
       movie.name
-    }">
+    }" data-img="${movie.picUrl}" data-genre="${movie.genre}" data-year="${
+    movie.yearReleased
+  }" data-distributor="<img src=${movie.distributor}>" >
     </div>
   `;
 }
