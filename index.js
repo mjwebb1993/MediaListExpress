@@ -4,6 +4,7 @@ import * as state from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
 import axios from "axios";
+import { stat } from "fs";
 // import { response } from "express";
 
 const router = new Navigo(window.location.origin);
@@ -118,15 +119,21 @@ function addEventListeners(st) {
       button.addEventListener("click", event => {
         console.log("events target", event.target.attributes);
         // create a new object with all key attributes and push into future list
-        state.User.futureList.name = event.target.attributes["data-name"].value;
-        state.User.futureList.genre =
-          event.target.attributes["data-genre"].value;
-        state.User.futureList.yearReleased =
-          event.target.attributes["data-year"].value;
-        state.User.futureList.picUrl =
-          event.target.attributes["data-img"].value;
-        state.User.futureList.distributor =
-          event.target.attributes["data-author"].value;
+        function Book(name, genre, yearReleased, picUrl, author) {
+          this.name = name;
+          this.genre = genre;
+          this.yearReleased = yearReleased;
+          this.picUrl = picUrl;
+          this.author = author;
+        }
+        let newBook = new Book(
+          event.target.attributes["data-name"].value,
+          event.target.attributes["data-genre"].value,
+          event.target.attributes["data-year"].value,
+          event.target.attributes["data-img"].value,
+          event.target.attributes["data-author"].value
+        );
+        state.User.futureList.push(newBook);
         // state.User.futureList.push(event.target.attributes.data.value);
         console.log(state.User.futureList);
       });
@@ -137,16 +144,23 @@ function addEventListeners(st) {
     document.querySelectorAll("#selectButtonPast").forEach(button => {
       button.addEventListener("click", event => {
         console.log("events target", event.target.attributes);
-        // create a new object with all key attributes and push into future list
-        state.User.pastList.name = event.target.attributes["data-name"].value;
-        state.User.pastList.genre = event.target.attributes["data-genre"].value;
-        state.User.pastList.yearReleased =
-          event.target.attributes["data-year"].value;
-        state.User.pastList.picUrl = event.target.attributes["data-img"].value;
-        state.User.pastList.distributor =
-          event.target.attributes["data-author"].value;
-        // state.User.futureList.push(event.target.attributes.data.value);
-        console.log(state.User.futureList);
+        // state.User.pastList = [];
+        function Book(name, genre, yearReleased, picUrl, author) {
+          this.name = name;
+          this.genre = genre;
+          this.yearReleased = yearReleased;
+          this.picUrl = picUrl;
+          this.author = author;
+        }
+        let newBook = new Book(
+          event.target.attributes["data-name"].value,
+          event.target.attributes["data-genre"].value,
+          event.target.attributes["data-year"].value,
+          event.target.attributes["data-img"].value,
+          event.target.attributes["data-author"].value
+        );
+        state.User.pastList.push(newBook);
+        console.log(state.User.pastList);
       });
     });
   }

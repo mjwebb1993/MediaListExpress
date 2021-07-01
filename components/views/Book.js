@@ -26,12 +26,12 @@ function formatBook(book) {
       book.name
     }" data-img="${book.picUrl}" data-genre="${book.genre}" data-year="${
     book.yearReleased
-  }">
+  }" data-author="${book.author}">
   <input id="selectButtonPast" type="button" value="Past List" data-name="${
     book.name
-  }" data-img="${book.picUrl}" data-genre="${book.genre}" data-year="${
-    book.yearReleased
-  }">
+  }" data-genre="${book.genre}" data-year="${book.yearReleased}" data-author="${
+    book.author
+  }" data-img="${book.picUrl}">
     </div>
   `;
 }
