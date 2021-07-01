@@ -2,16 +2,27 @@ import html from "html-literal";
 
 export default st => html`
   <div id="media-page">
-    <h2>User Future List:</h2>
+    <h2>User Lists:</h2>
   </div>
   <section id="game-page">
-    <div class="game-flex">
+    <div class="user-flex">
+      <h2>User Future List:</h2>
       <h3>Movie Name: ${st.futureList.name}</h3>
       <img src=${st.futureList.picUrl} />
       <h4>Movie Info</h4>
       <h5>
         Genre: ${st.futureList.genre}<br />
         Released: ${st.futureList.yearReleased}<br />
+      </h5>
+    </div>
+    <div class="user-flex">
+      <h2>User Past List:</h2>
+      <h3>Movie Name: ${st.pastList.name}</h3>
+      <img src=${st.pastList.picUrl} />
+      <h4>Movie Info</h4>
+      <h5>
+        Genre: ${st.pastList.genre}<br />
+        Released: ${st.pastList.yearReleased}<br />
       </h5>
     </div>
   </section>

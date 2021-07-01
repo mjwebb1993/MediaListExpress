@@ -42,7 +42,7 @@ function addEventListeners(st) {
   // console.log("I'm rendering movie before if", st);
   if (st.view === "Movie") {
     // console.log("I'm rendering movie");
-    document.querySelectorAll("#selectButton").forEach(button => {
+    document.querySelectorAll("#selectButtonFuture").forEach(button => {
       button.addEventListener("click", event => {
         console.log("events target", event.target.attributes);
         // create a new object with all key attributes and push into future list
@@ -60,7 +60,98 @@ function addEventListeners(st) {
       });
     });
   }
+  if (st.view === "Movie") {
+    // console.log("I'm rendering movie");
+    document.querySelectorAll("#selectButtonPast").forEach(button => {
+      button.addEventListener("click", event => {
+        console.log("events target", event.target.attributes);
+        // create a new object with all key attributes and push into future list
+        state.User.pastList.name = event.target.attributes["data-name"].value;
+        state.User.pastList.genre = event.target.attributes["data-genre"].value;
+        state.User.pastList.yearReleased =
+          event.target.attributes["data-year"].value;
+        state.User.pastList.picUrl = event.target.attributes["data-img"].value;
+        state.User.pastList.distributor =
+          event.target.attributes["data-distributor"].value;
+        // state.User.futureList.push(event.target.attributes.data.value);
+        console.log(state.User.futureList);
+      });
+    });
+  }
+  if (st.view === "Game") {
+    // console.log("I'm rendering movie");
+    document.querySelectorAll("#selectButtonFuture").forEach(button => {
+      button.addEventListener("click", event => {
+        console.log("events target", event.target.attributes);
+        // create a new object with all key attributes and push into future list
+        state.User.futureList.name = event.target.attributes["data-name"].value;
+        state.User.futureList.genre =
+          event.target.attributes["data-genre"].value;
+        state.User.futureList.yearReleased =
+          event.target.attributes["data-year"].value;
+        state.User.futureList.picUrl =
+          event.target.attributes["data-img"].value;
+        // state.User.futureList.push(event.target.attributes.data.value);
+        console.log(state.User.futureList);
+      });
+    });
+  }
+  if (st.view === "Game") {
+    // console.log("I'm rendering movie");
+    document.querySelectorAll("#selectButtonPast").forEach(button => {
+      button.addEventListener("click", event => {
+        console.log("events target", event.target.attributes);
+        // create a new object with all key attributes and push into future list
+        state.User.pastList.name = event.target.attributes["data-name"].value;
+        state.User.pastList.genre = event.target.attributes["data-genre"].value;
+        state.User.pastList.yearReleased =
+          event.target.attributes["data-year"].value;
+        state.User.pastList.picUrl = event.target.attributes["data-img"].value;
+        // state.User.futureList.push(event.target.attributes.data.value);
+        console.log(state.User.futureList);
+      });
+    });
+  }
+  if (st.view === "Book") {
+    // console.log("I'm rendering movie");
+    document.querySelectorAll("#selectButtonFuture").forEach(button => {
+      button.addEventListener("click", event => {
+        console.log("events target", event.target.attributes);
+        // create a new object with all key attributes and push into future list
+        state.User.futureList.name = event.target.attributes["data-name"].value;
+        state.User.futureList.genre =
+          event.target.attributes["data-genre"].value;
+        state.User.futureList.yearReleased =
+          event.target.attributes["data-year"].value;
+        state.User.futureList.picUrl =
+          event.target.attributes["data-img"].value;
+        state.User.futureList.distributor =
+          event.target.attributes["data-author"].value;
+        // state.User.futureList.push(event.target.attributes.data.value);
+        console.log(state.User.futureList);
+      });
+    });
+  }
+  if (st.view === "Book") {
+    // console.log("I'm rendering movie");
+    document.querySelectorAll("#selectButtonPast").forEach(button => {
+      button.addEventListener("click", event => {
+        console.log("events target", event.target.attributes);
+        // create a new object with all key attributes and push into future list
+        state.User.pastList.name = event.target.attributes["data-name"].value;
+        state.User.pastList.genre = event.target.attributes["data-genre"].value;
+        state.User.pastList.yearReleased =
+          event.target.attributes["data-year"].value;
+        state.User.pastList.picUrl = event.target.attributes["data-img"].value;
+        state.User.pastList.distributor =
+          event.target.attributes["data-author"].value;
+        // state.User.futureList.push(event.target.attributes.data.value);
+        console.log(state.User.futureList);
+      });
+    });
+  }
 }
+
 let users = {
   username: "password"
 };
@@ -114,6 +205,7 @@ router.hooks({
         axios.get(`${process.env.MEDIA_API_URL}/listBooks`).then(response => {
           response.data.forEach(book => {
             state.Book.books.push(book);
+            console.log("Books", state.Book.books);
           });
           done();
         });

@@ -22,11 +22,16 @@ function formatMovie(movie) {
     <h5>Genre: ${movie.genre.join(" & ")}<br>
     Released: ${movie.yearReleased}<br>
     Studio: ${movie.distributor}</h5>
-    <input id="selectButton" type="button" value="select" data-name="${
+    <input id="selectButtonFuture" type="button" value="Future List" data-name="${
       movie.name
     }" data-img="${movie.picUrl}" data-genre="${movie.genre}" data-year="${
     movie.yearReleased
-  }" data-distributor="<img src=${movie.distributor}>" >
+  }">
+  <input id="selectButtonPast" type="button" value="Past List" data-name="${
+    movie.name
+  }" data-img="${movie.picUrl}" data-genre="${movie.genre}" data-year="${
+    movie.yearReleased
+  }">
     </div>
   `;
 }

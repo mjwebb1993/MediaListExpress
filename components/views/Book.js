@@ -21,8 +21,17 @@ function formatBook(book) {
     <h4>Book Info</h4>
     <h5>Genre: ${book.genre.join(" & ")}<br>
     Released: ${book.yearReleased}<br>
-    Consoles: ${book.author}</h5>
-    <input id="selectButton" type="button" value="select">
+    Author: ${book.author}</h5>
+    <input id="selectButtonFuture" type="button" value="Future List" data-name="${
+      book.name
+    }" data-img="${book.picUrl}" data-genre="${book.genre}" data-year="${
+    book.yearReleased
+  }">
+  <input id="selectButtonPast" type="button" value="Past List" data-name="${
+    book.name
+  }" data-img="${book.picUrl}" data-genre="${book.genre}" data-year="${
+    book.yearReleased
+  }">
     </div>
   `;
 }

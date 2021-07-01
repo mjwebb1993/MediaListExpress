@@ -22,7 +22,16 @@ function formatGame(game) {
     <h5>Genre: ${game.genre.join(" & ")}<br>
     Released: ${game.yearReleased}<br>
     Consoles: ${game.console}</h5>
-    <input id="selectButton" type="button" value="select">
+    <input id="selectButtonFuture" type="button" value="Future List" data-name="${
+      game.name
+    }" data-img="${game.picUrl}" data-genre="${game.genre}" data-year="${
+    game.yearReleased
+  }">
+  <input id="selectButtonPast" type="button" value="Past List" data-name="${
+    game.name
+  }" data-img="${game.picUrl}" data-genre="${game.genre}" data-year="${
+    game.yearReleased
+  }">
     </div>
 
   `;
