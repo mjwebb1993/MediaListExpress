@@ -12,7 +12,6 @@ export default st => html`
       <h5>
         Genre: ${st.futureList.genre}<br />
         Released: ${st.futureList.yearReleased}<br />
-        Studio: ${st.futureList.distributor}
       </h5>
     </div>
   </section>
