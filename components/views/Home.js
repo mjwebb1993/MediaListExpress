@@ -16,6 +16,8 @@ export default st => html`
   </div>
   <div class="flex-container">
     <div class="flex-child red">
+      <h4>Become a User Today!</h4>
+      <h5>Follow the links below to get started!</h5>
     <div class="login-home">
     Already a user? Click <a href="/Login">here</a> to Log in!
     </div>
@@ -26,15 +28,12 @@ export default st => html`
     </div>
 
     <div class="flex-child blue">
-      <h3>Example of Data</h3>
-      <h2>See some of your favorites like Mass Effect!</h2>
-      <section id="game-page">
+      <h4>See some of your favorites like Mass Effect, Endgame and even more!</h4>
     ${st.examples
       .map(example => {
         return formatGame(example);
       })
       .join("")}
-  </section>
   </div>
     </div>
   </div>

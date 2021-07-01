@@ -15,7 +15,7 @@ export default st => html`
 
 function formatMovie(movie) {
   return `
-    <div class="game-flex">
+    <div class="movie-flex">
     <h3>Movie Name: ${movie.name}</h3>
     <img src=${movie.picUrl}>
     <h4>Movie Info</h4>

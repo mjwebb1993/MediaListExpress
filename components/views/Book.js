@@ -15,7 +15,7 @@ export default st => html`
 
 function formatBook(book) {
   return `
-    <div class="game-flex">
+    <div class="book-flex">
     <h3>Book Name: ${book.name}</h3>
     <img src=${book.picUrl}>
     <h4>Book Info</h4>

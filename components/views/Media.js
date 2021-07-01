@@ -37,7 +37,7 @@ function formatGame(game) {
 }
 function formatMovie(movie) {
   return `
-<div class="game-flex">
+<div class="movie-flex">
 <h3>Movie Name: ${movie.name}</h3>
 <img src=${movie.picUrl}>
 <h4>Movie Info</h4>
@@ -49,7 +49,7 @@ Studio: ${movie.distributor}</h5>
 }
 function formatBook(book) {
   return `
-    <div class="game-flex">
+    <div class="book-flex">
     <h3>Book Name: ${book.name}</h3>
     <img src=${book.picUrl}>
     <h4>Book Info</h4>
