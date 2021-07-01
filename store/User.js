@@ -1,6 +1,10 @@
 export default {
   header: "The User Home",
   view: "User",
-  futureList: [],
-  pastList: []
+  futureListBook: [],
+  pastListBook: [],
+  futureListMovie: [],
+  pastListMovie: [],
+  futureListGame: [],
+  pastListGame: []
 };

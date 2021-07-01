@@ -45,19 +45,22 @@ function addEventListeners(st) {
     // console.log("I'm rendering movie");
     document.querySelectorAll("#selectButtonFuture").forEach(button => {
       button.addEventListener("click", event => {
-        console.log("events target", event.target.attributes);
+        // console.log("events target", event.target.attributes);
         // create a new object with all key attributes and push into future list
-        state.User.futureList.name = event.target.attributes["data-name"].value;
-        state.User.futureList.genre =
-          event.target.attributes["data-genre"].value;
-        state.User.futureList.yearReleased =
-          event.target.attributes["data-year"].value;
-        state.User.futureList.picUrl =
-          event.target.attributes["data-img"].value;
-        state.User.futureList.distributor =
-          event.target.attributes["data-distributor"].value;
-        // state.User.futureList.push(event.target.attributes.data.value);
-        console.log(state.User.futureList);
+        function Movie(name, genre, yearReleased, picUrl) {
+          this.name = name;
+          this.genre = genre;
+          this.yearReleased = yearReleased;
+          this.picUrl = picUrl;
+        }
+        let newMovie = new Movie(
+          event.target.attributes["data-name"].value,
+          event.target.attributes["data-genre"].value,
+          event.target.attributes["data-year"].value,
+          event.target.attributes["data-img"].value
+        );
+        state.User.futureListMovie.push(newMovie);
+        // console.log(state.User.futureList);
       });
     });
   }
@@ -65,17 +68,21 @@ function addEventListeners(st) {
     // console.log("I'm rendering movie");
     document.querySelectorAll("#selectButtonPast").forEach(button => {
       button.addEventListener("click", event => {
-        console.log("events target", event.target.attributes);
+        // console.log("events target", event.target.attributes);
         // create a new object with all key attributes and push into future list
-        state.User.pastList.name = event.target.attributes["data-name"].value;
-        state.User.pastList.genre = event.target.attributes["data-genre"].value;
-        state.User.pastList.yearReleased =
-          event.target.attributes["data-year"].value;
-        state.User.pastList.picUrl = event.target.attributes["data-img"].value;
-        state.User.pastList.distributor =
-          event.target.attributes["data-distributor"].value;
-        // state.User.futureList.push(event.target.attributes.data.value);
-        console.log(state.User.futureList);
+        function Movie(name, genre, yearReleased, picUrl) {
+          this.name = name;
+          this.genre = genre;
+          this.yearReleased = yearReleased;
+          this.picUrl = picUrl;
+        }
+        let newMovie = new Movie(
+          event.target.attributes["data-name"].value,
+          event.target.attributes["data-genre"].value,
+          event.target.attributes["data-year"].value,
+          event.target.attributes["data-img"].value
+        );
+        state.User.pastListMovie.push(newMovie);
       });
     });
   }
@@ -83,17 +90,22 @@ function addEventListeners(st) {
     // console.log("I'm rendering movie");
     document.querySelectorAll("#selectButtonFuture").forEach(button => {
       button.addEventListener("click", event => {
-        console.log("events target", event.target.attributes);
+        // console.log("events target", event.target.attributes);
         // create a new object with all key attributes and push into future list
-        state.User.futureList.name = event.target.attributes["data-name"].value;
-        state.User.futureList.genre =
-          event.target.attributes["data-genre"].value;
-        state.User.futureList.yearReleased =
-          event.target.attributes["data-year"].value;
-        state.User.futureList.picUrl =
-          event.target.attributes["data-img"].value;
-        // state.User.futureList.push(event.target.attributes.data.value);
-        console.log(state.User.futureList);
+        function Game(name, genre, yearReleased, picUrl) {
+          this.name = name;
+          this.genre = genre;
+          this.yearReleased = yearReleased;
+          this.picUrl = picUrl;
+        }
+        let newGame = new Game(
+          event.target.attributes["data-name"].value,
+          event.target.attributes["data-genre"].value,
+          event.target.attributes["data-year"].value,
+          event.target.attributes["data-img"].value
+        );
+        state.User.futureListGame.push(newGame);
+        // console.log(state.User.futureList);
       });
     });
   }
@@ -101,15 +113,22 @@ function addEventListeners(st) {
     // console.log("I'm rendering movie");
     document.querySelectorAll("#selectButtonPast").forEach(button => {
       button.addEventListener("click", event => {
-        console.log("events target", event.target.attributes);
+        // console.log("events target", event.target.attributes);
         // create a new object with all key attributes and push into future list
-        state.User.pastList.name = event.target.attributes["data-name"].value;
-        state.User.pastList.genre = event.target.attributes["data-genre"].value;
-        state.User.pastList.yearReleased =
-          event.target.attributes["data-year"].value;
-        state.User.pastList.picUrl = event.target.attributes["data-img"].value;
-        // state.User.futureList.push(event.target.attributes.data.value);
-        console.log(state.User.futureList);
+        function Game(name, genre, yearReleased, picUrl) {
+          this.name = name;
+          this.genre = genre;
+          this.yearReleased = yearReleased;
+          this.picUrl = picUrl;
+        }
+        let newGame = new Game(
+          event.target.attributes["data-name"].value,
+          event.target.attributes["data-genre"].value,
+          event.target.attributes["data-year"].value,
+          event.target.attributes["data-img"].value
+        );
+        state.User.pastListGame.push(newGame);
+        // console.log(state.User.pastList);
       });
     });
   }
@@ -117,7 +136,7 @@ function addEventListeners(st) {
     // console.log("I'm rendering movie");
     document.querySelectorAll("#selectButtonFuture").forEach(button => {
       button.addEventListener("click", event => {
-        console.log("events target", event.target.attributes);
+        // console.log("events target", event.target.attributes);
         // create a new object with all key attributes and push into future list
         function Book(name, genre, yearReleased, picUrl, author) {
           this.name = name;
@@ -133,9 +152,9 @@ function addEventListeners(st) {
           event.target.attributes["data-img"].value,
           event.target.attributes["data-author"].value
         );
-        state.User.futureList.push(newBook);
+        state.User.futureListBook.push(newBook);
         // state.User.futureList.push(event.target.attributes.data.value);
-        console.log(state.User.futureList);
+        // console.log(state.User.futureList);
       });
     });
   }
@@ -143,7 +162,7 @@ function addEventListeners(st) {
     // console.log("I'm rendering movie");
     document.querySelectorAll("#selectButtonPast").forEach(button => {
       button.addEventListener("click", event => {
-        console.log("events target", event.target.attributes);
+        // console.log("events target", event.target.attributes);
         // state.User.pastList = [];
         function Book(name, genre, yearReleased, picUrl, author) {
           this.name = name;
@@ -159,8 +178,8 @@ function addEventListeners(st) {
           event.target.attributes["data-img"].value,
           event.target.attributes["data-author"].value
         );
-        state.User.pastList.push(newBook);
-        console.log(state.User.pastList);
+        state.User.pastListBook.push(newBook);
+        // console.log(state.User.pastList);
       });
     });
   }
