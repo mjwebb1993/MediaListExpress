@@ -42,7 +42,7 @@ header > #headerTitle {
   text-decoration: underline;
 }
 #headerTitle > h4 {
-  text-shadow: #e9d8a6 1px 0 10px;
+  text-shadow: #005f73 1px 0 10px;
 }
 /* header > #current-page {
   background-color: #e9d8a6;
@@ -204,7 +204,7 @@ margin-bottom: 1px;
   background: var(--darkerGreen);
   text-align: center;
   color: black;
-  text-shadow: black 1px 0 10px;
+  text-shadow: #005f73 1px 0 10px;
   cursor: pointer;
   font-size: 40px;
   border: black 1px solid;
@@ -218,12 +218,12 @@ margin-bottom: 1px;
 }
 .register-home {
   text-align: center;
-  text-shadow:black 1px 0 10px;
+  text-shadow: #003944 1px 0 10px;
   padding-bottom: 10px;
 }
 .login-home {
   text-align: center;
-  text-shadow: black 1px 0 10px;
+  text-shadow: #003944 1px 0 10px;
   padding-bottom: 10px;
 }
 
