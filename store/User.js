@@ -6,5 +6,7 @@ export default {
   futureListMovie: [],
   pastListMovie: [],
   futureListGame: [],
-  pastListGame: []
+  pastListGame: [],
+  hits: [],
+  recipe: {}
 };

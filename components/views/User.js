@@ -5,6 +5,9 @@ export default st => html`
     <h2>User Future List:</h2>
   </div>
   <section id="game-page">
+    ${st.hits.map(hit => {
+      return formatRecipe(hit);
+    })}
     ${st.futureListMovie
       .map(list => {
         return formatMovie(list);
@@ -42,7 +45,14 @@ export default st => html`
       .join("")}
   </section>
 `;
-
+function formatRecipe(hit) {
+  return `
+  <div class="book-flex">
+  Name: ${hit.label}
+  Image: <img src=${hit.image}>
+  </div>
+  `;
+}
 function formatBook(list) {
   return `
   <div class="book-flex">

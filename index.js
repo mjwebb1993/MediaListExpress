@@ -35,7 +35,7 @@ function addEventListeners(st) {
     .addEventListener("click", () =>
       document.querySelector("nav > ul").classList.toggle("hidden--mobile")
     );
-  const form = document.querySelector("form");
+  // const form = document.querySelector("form");
   // document.querySelector("#submitButtonOne").addEventListener("click", () => {
   //   console.log("I was clicked!");
   //   userInput();
