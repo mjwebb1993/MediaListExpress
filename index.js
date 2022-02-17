@@ -4,8 +4,9 @@ import * as state from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
 import axios from "axios";
-import { stat } from "fs";
-// import { response } from "express";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const router = new Navigo(window.location.origin);
 
@@ -185,18 +186,18 @@ function addEventListeners(st) {
   }
 }
 
-let users = {
-  username: "password"
-};
-function userInput() {
-  let userName = document.getElementById("userNameInput").value;
-  let userPass = document.getElementById("userPassInput").value;
-  users.username = userName;
-  users.password = userPass;
-  // document.getElementsByClassName("flex-child").classList.toggle("visibility");
-  // console.log(users);
-  // document.querySelector("flex-child").style.visibility = "hidden";
-}
+// let users = {
+//   username: "password"
+// };
+// function userInput() {
+//   let userName = document.getElementById("userNameInput").value;
+//   let userPass = document.getElementById("userPassInput").value;
+//   users.username = userName;
+//   users.password = userPass;
+//   // document.getElementsByClassName("flex-child").classList.toggle("visibility");
+//   // console.log(users);
+//   // document.querySelector("flex-child").style.visibility = "hidden";
+// }
 // add event listeners for login page
 
 router.hooks({
